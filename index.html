@@ -250,7 +250,7 @@
           <article class="feature reveal" style="--d:2">
             <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 4l5 13h14l-11 8 4 14-12-8-12 8 4-14L5 17h14z"/></svg>
             <h3>Progression</h3>
-            <p>Coins, rank points and 11 titles. A loadout with a starting powerup and small, capped bonuses.</p>
+            <p>Coins, rank points and <a href="#titles">11 titles</a>. A loadout with a starting powerup and small, capped bonuses.</p>
           </article>
           <article class="feature reveal" style="--d:3">
             <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 6l-8 6 4 8 4-2v24h16V18l4 2 4-8-8-6c-1 4-4 6-8 6s-7-2-8-6z"/></svg>
@@ -334,6 +334,37 @@
               <li><div><b>Habulan Royale</b><span>A shrinking safe zone. Last one left wins.</span></div><span class="tag tag--soon">Coming soon</span></li>
             </ul>
           </div>
+        </div>
+
+        <!-- Titles: the 11 in the game (Assets/Habulan/ScriptableObjects/Titles) -->
+        <div class="titles" id="titles">
+          <div class="titles__head">
+            <div>
+              <p class="eyebrow reveal">Titles</p>
+              <h3 class="reveal" style="--d:1" data-split>Eleven titles. One long climb.</h3>
+            </div>
+            <p class="reveal" style="--d:2">Every finished match earns rank points. Titles unlock in order: each needs its rank points, any goals listed under it, and every title before it. Yours shows beside your name in the lobby, on the scoreboard and on the results.</p>
+          </div>
+
+          <ul class="titles__facts reveal" style="--d:1">
+            <li><b>Up to 30</b><span>rank points from a ranked match: up to 20 for your place, 6 for the time you kept, and 4 for your tags and escapes.</span></li>
+            <li><b>Half</b><span>in casual matches and practice. A match is ranked when at least two human players finish it, on the standard time, with upgrades off.</span></li>
+            <li><b>3,500</b><span>rank points for the top title, with 80 ranked matches and 25 ranked wins.</span></li>
+          </ul>
+
+          <ol class="titles__ladder" aria-label="The 11 titles, in the order they unlock">
+            <li class="title-card reveal" style="--d:0; --c:#b8bfcc; --p:0.000"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>I</span><span class="title-card__rp"><b>0</b> rank points</span></div><h4>Beginner</h4><p>Everyone starts here.</p><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:1; --c:#9ed98c; --p:0.011"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>II</span><span class="title-card__rp"><b>40</b> rank points</span></div><h4>Taguan Rookie</h4><p>You know when to hide and when to run.</p><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:2; --c:#66d973; --p:0.034"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>III</span><span class="title-card__rp"><b>120</b> rank points</span></div><h4>Barrio Runner</h4><p>You know every alley of the barrio.</p><ul class="title-card__goals" aria-label="Also needs"><li>5 matches played</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:3; --c:#4cccc7; --p:0.071"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>IV</span><span class="title-card__rp"><b>250</b> rank points</span></div><h4>Fog Chaser</h4><p>Hard to catch, even when the fog rolls in.</p><ul class="title-card__goals" aria-label="Also needs"><li>10 escapes</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:0; --c:#4ca6ff; --p:0.129"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>V</span><span class="title-card__rp"><b>450</b> rank points</span></div><h4>Habulero</h4><p>A regular of the barangay chase.</p><ul class="title-card__goals" aria-label="Also needs"><li>25 matches played</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:1; --c:#7380ff; --p:0.200"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>VI</span><span class="title-card__rp"><b>700</b> rank points</span></div><h4>Curse Breaker</h4><p>When the mark finds you, it never stays long.</p><ul class="title-card__goals" aria-label="Also needs"><li>60 tags</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:2; --c:#a673ff; --p:0.286"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>VII</span><span class="title-card__rp"><b>1,000</b> rank points</span></div><h4>Bell Survivor</h4><p>Hunted often; the bell has never had you.</p><ul class="title-card__goals" aria-label="Also needs"><li>75 escapes</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:3; --c:#e666e6; --p:0.400"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>VIII</span><span class="title-card__rp"><b>1,400</b> rank points</span></div><h4>Keeper's Bane</h4><p>Nobody shakes you for long, not even the Keeper.</p><ul class="title-card__goals" aria-label="Also needs"><li>120 tags</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:0; --c:#ff994c; --p:0.543"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>IX</span><span class="title-card__rp"><b>1,900</b> rank points</span></div><h4>Master of the Fifth Bell</h4><p>Hundreds of chases; you know every toll.</p><ul class="title-card__goals" aria-label="Also needs"><li>100 matches played</li><li>20 ranked matches</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal" style="--d:1; --c:#ffcc40; --p:0.743"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>X</span><span class="title-card__rp"><b>2,600</b> rank points</span></div><h4>Habulan Elite</h4><p>A name the lobby recognises.</p><ul class="title-card__goals" aria-label="Also needs"><li>40 ranked matches</li><li>10 ranked wins</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+            <li class="title-card reveal title-card--top" style="--d:2; --c:#ff5940; --p:1.000"><div class="title-card__top"><span class="title-card__badge"><span class="visually-hidden">Title </span>XI</span><span class="title-card__rp"><b>3,500</b> rank points</span></div><h4>Legend of Marinduque</h4><span class="tag title-card__flag">The top title</span><p>The island tells stories about you.</p><ul class="title-card__goals" aria-label="Also needs"><li>80 ranked matches</li><li>25 ranked wins</li></ul><span class="title-card__meter" aria-hidden="true"></span></li>
+          </ol>
         </div>
       </div>
     </section>

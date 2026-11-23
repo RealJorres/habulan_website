@@ -2309,6 +2309,203 @@ dialog::backdrop {
 }
 
 /* ---------- Responsive ---------- */
+/* ---------- Titles: the 11 to earn, each in its colour from the game ---------- */
+.titles {
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+.titles__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.titles__head h3 {
+  font-size: var(--step-3);
+}
+.titles__head > p {
+  max-width: 52ch;
+  color: var(--muted);
+}
+.titles__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+}
+.titles__facts li {
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-2);
+}
+.titles__facts b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  color: var(--gold-hi);
+}
+.titles__facts span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.titles__ladder {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.title-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.25rem 1.6rem;
+  background: var(--bg-2);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c) 10%, var(--surface)) 0%, var(--bg-2) 75%);
+  border: 1px solid var(--line-soft);
+  border-top: 2px solid var(--c);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.title-card:hover {
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  border-top-color: var(--c);
+  box-shadow: 0 18px 40px -24px var(--c);
+}
+.title-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+.title-card__badge {
+  display: grid;
+  place-items: center;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0.55rem;
+  background: var(--c);
+  color: #0b0b10;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  clip-path: polygon(14% 0, 100% 0, 100% 86%, 86% 100%, 0 100%, 0 14%);
+}
+.title-card__rp {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+}
+.title-card__rp b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  letter-spacing: 0.02em;
+  color: var(--bone);
+}
+.title-card h4 {
+  font-size: var(--step-1);
+  line-height: 1.2;
+  color: var(--bone);
+  transition: color 0.3s var(--ease);
+}
+.title-card:hover h4 {
+  color: var(--c);
+}
+.title-card p {
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.title-card__goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.title-card__goals li {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--c) 40%, transparent);
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+/* How far up the climb it sits: rank points out of the top title's 3,500, filling as the card comes in. */
+.title-card__meter {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 0.75rem;
+  height: 3px;
+  background: var(--line-soft);
+}
+.title-card__meter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c);
+  transform: scaleX(var(--p));
+  transform-origin: left;
+  transition: transform 1.4s var(--ease-out);
+  transition-delay: calc(0.35s + var(--d, 0) * 110ms);
+}
+.js .title-card:not(.is-in) .title-card__meter::after {
+  transform: scaleX(0);
+}
+.title-card--top {
+  grid-column: span 2;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent), 0 24px 60px -30px var(--c);
+}
+.title-card--top h4 {
+  font-size: var(--step-2);
+  color: var(--c);
+}
+.title-card__flag {
+  align-self: flex-start;
+  border-color: color-mix(in srgb, var(--c) 55%, transparent);
+  color: var(--c);
+}
+@media (max-width: 1100px) {
+  .titles__ladder {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 860px) {
+  .titles__facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .titles__ladder {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .titles__ladder {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .title-card--top {
+    grid-column: auto;
+  }
+}
+
 @media (max-width: 1100px) {
   .nav a:not(.btn) {
     display: none;
