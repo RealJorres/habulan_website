@@ -104,7 +104,12 @@ Every picture is real, from the HABULAN Unity project. The originals are only re
   `Habulan.EditorTools.WebsiteCaptureTool.CaptureBaryoSawi`, written to `Screenshots/Website/`.
 - **Match shots** (a real practice match in Baryo Sawi with the game's HUD): the game's explicit PlayMode test
   `Habulan.Tests.WebsiteCaptureTests`, written to `Screenshots/web_match_*.jpg`.
-- **Portraits, logo, icon, powerup icons and fonts:** from `Assets/Habulan/Art` and `Assets/Habulan/UI/Fonts`.
+- **Character cards:** the team's character art sheets, in `public/assets/characters/art/` as `<name>-720.webp` (cards)
+  and `<name>-1160.webp` (opened full size). The Ghost of the 5th Bell has no sheet yet, so it keeps its in-game
+  portrait. To add or replace a sheet, convert it the same way:
+  `ffmpeg -i sheet.png -vf scale=720:-2 -c:v libwebp -quality 84 public/assets/characters/art/<name>-720.webp`
+  (and again with `1160`).
+- **Logo, icon, powerup icons and fonts:** from `Assets/Habulan/Art` and `Assets/Habulan/UI/Fonts`.
 
 To rebuild them all after new captures (it needs ffmpeg with WebP support):
 

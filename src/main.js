@@ -444,6 +444,18 @@ function initGallery() {
     show(items.indexOf(link));
     lightbox.showModal();
   });
+  // The character art opens in the same viewer, paging through the characters.
+  $$('[data-art-set]').forEach((set) => {
+    set.addEventListener('click', (event) => {
+      const link = event.target.closest('a.card__art');
+      if (!link || typeof lightbox.showModal !== 'function') return;
+      event.preventDefault();
+      opener = link;
+      items = $$('a.card__art', set);
+      show(items.indexOf(link));
+      lightbox.showModal();
+    });
+  });
   $('[data-prev]', lightbox).addEventListener('click', () => show(index - 1));
   $('[data-next]', lightbox).addEventListener('click', () => show(index + 1));
   $('[data-close]', lightbox).addEventListener('click', () => lightbox.close());
