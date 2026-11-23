@@ -7,7 +7,7 @@ export const config = {
    * The address the site will live at, e.g. 'https://habulan.example.com' (no trailing slash).
    * `npm run build` uses it to make the social-preview tags absolute (Facebook, X and Discord need absolute URLs).
    */
-  siteUrl: '',
+  siteUrl: 'https://habulan.netlify.app',
 
   /*
    * The official trailer. A YouTube link (watch, youtu.be, shorts or embed), a Vimeo link, or a video file such as

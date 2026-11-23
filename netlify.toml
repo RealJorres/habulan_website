@@ -1,0 +1,8 @@
+# Netlify: build the site, then publish dist/ (where the images, fonts and trailer sit beside the page).
+# Without this, Netlify serves the repository as it is, and everything under public/ is not found.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
