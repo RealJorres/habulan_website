@@ -1,0 +1,17 @@
+{
+  "name": "habulan-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official landing page for HABULAN: The Curse of the Fifth Bell. A static site with no dependencies.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "assets": "node scripts/prepare-assets.mjs",
+    "test": "node scripts/test-qr.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

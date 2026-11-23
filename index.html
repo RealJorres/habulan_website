@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HABULAN: The Curse of the Fifth Bell | Official Site</title>
+  <meta name="description" content="HABULAN is a multiplayer 3D tag game inspired by the Filipino childhood game of habulan. Every second you keep is a second the curse cannot take. Pass the curse before the Fifth Bell rings.">
+  <meta name="theme-color" content="#08090d">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="./">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HABULAN">
+  <meta property="og:title" content="HABULAN: The Curse of the Fifth Bell">
+  <meta property="og:description" content="A multiplayer 3D tag game inspired by the Filipino childhood game of habulan. Every second you keep is a second the curse cannot take.">
+  <meta property="og:image" content="assets/og/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The church of Baryo Sawi on its terrace at the curse's dusk, under a black sun.">
+  <meta property="og:url" content="./">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HABULAN: The Curse of the Fifth Bell">
+  <meta name="twitter:description" content="Every second you keep is a second the curse cannot take.">
+  <meta name="twitter:image" content="assets/og/og-image.jpg">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/Cinzel-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Barlow-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="assets/environments/hero-1600.webp" imagesrcset="assets/environments/hero-960.webp 960w, assets/environments/hero-1600.webp 1600w, assets/environments/hero-2560.webp 2560w" imagesizes="100vw">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" data-progress aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="HABULAN, back to the top">
+        <img src="assets/logo/habulan-wordmark-sm.webp" alt="HABULAN" width="400" height="203">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about">The Game</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#features">Features</a>
+        <a href="#world">The World</a>
+        <a href="#lore">The Lore</a>
+        <a href="#media">Media</a>
+        <a href="#trailer">Trailer</a>
+        <a class="btn btn--gold" href="#play">Play</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open the menu" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <nav aria-label="Main, mobile">
+      <ol>
+        <li style="--i:0"><a href="#about">The Game</a></li>
+        <li style="--i:1"><a href="#gameplay">Gameplay</a></li>
+        <li style="--i:2"><a href="#features">Features</a></li>
+        <li style="--i:3"><a href="#world">The World</a></li>
+        <li style="--i:4"><a href="#lore">The Lore</a></li>
+        <li style="--i:5"><a href="#media">Media</a></li>
+        <li style="--i:6"><a href="#trailer">Trailer</a></li>
+      </ol>
+      <a class="btn btn--gold" href="#play">Play the game</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- 1. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__bg" data-parallax="0.35">
+        <img src="assets/environments/hero-1600.webp"
+             srcset="assets/environments/hero-960.webp 960w, assets/environments/hero-1600.webp 1600w, assets/environments/hero-2560.webp 2560w"
+             sizes="100vw" alt="" width="2560" height="1440" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__shade"></div>
+      <div class="fog fog--far" aria-hidden="true"></div>
+      <div class="fog" aria-hidden="true"></div>
+      <canvas class="embers" data-embers aria-hidden="true"></canvas>
+
+      <div class="hero__content intro" data-hero-content>
+        <p class="eyebrow hero__kicker" style="--i:0">A game of Taya</p>
+        <h1 id="hero-title" style="--i:1">
+          <img class="hero__logo" src="assets/logo/habulan-wordmark.webp" alt="HABULAN" width="1200" height="608">
+        </h1>
+        <p class="hero__title" style="--i:2">The Curse of the Fifth Bell<span class="rule" aria-hidden="true"></span></p>
+        <p class="hero__tl" lang="fil" style="--i:3">“Sa isla ng mga lihim, huwag kang mahuli. Kapag ikaw ang naging Taya, oras mo na ang kapalit.”</p>
+        <p class="hero__en" style="--i:4">Every second you keep is a second the curse cannot take.</p>
+        <div class="hero__actions" style="--i:5">
+          <a class="btn btn--gold" href="#about">Explore the game</a>
+          <button class="btn btn--ghost" type="button" data-video="trailer">
+            <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span>
+            Watch trailer
+          </button>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about">Scroll</a>
+      <p class="hero__credit">Baryo Sawi at the curse's dusk · in-game</p>
+    </section>
+
+    <!-- 2. About -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="eyebrow reveal">The game</p>
+        <div class="about__grid">
+          <h2 class="about__headline reveal" id="about-title" style="--d:1" data-split>
+            A game of chase.
+            <em>A race against time.</em>
+            <span class="crimson">A curse that never ends.</span>
+          </h2>
+          <div class="about__copy reveal" style="--d:2">
+            <p><strong>HABULAN</strong> is a multiplayer 3D tag game inspired by the Filipino childhood game of habulan, reimagined as a supernatural mystery in a forgotten island village.</p>
+            <p>Every player starts with the same time on their own clock, and <strong>it only runs while you are the Taya.</strong> Tag someone to pass the curse and stop your clock. When a Taya's clock reaches 0:00, the Fifth Bell rings and the match ends. Whoever kept the most time wins.</p>
+          </div>
+        </div>
+        <ul class="facts">
+          <li class="reveal" style="--d:0"><b>3–8</b><span>Players a match</span></li>
+          <li class="reveal" style="--d:1"><b>5:00</b><span>On every clock, online</span></li>
+          <li class="reveal" style="--d:2"><b>1 Taya</b><span>Most time left wins</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Gameplay -->
+    <section class="section gameplay" id="gameplay" aria-labelledby="gameplay-title">
+      <div class="container">
+        <div class="gameplay__head">
+          <p class="eyebrow reveal">Gameplay</p>
+          <h2 class="section-title reveal" id="gameplay-title" style="--d:1" data-split>Run. Hide. Pass it on.</h2>
+          <p class="lede reveal" style="--d:2">Four beats of every match, shown in real captures from the game.</p>
+        </div>
+
+        <article class="chapter">
+          <figure class="chapter__media reveal-img" data-drift="36" data-gallery-link="match-day-third">
+            <img src="assets/screenshots/match-day-third-1600.webp" srcset="assets/screenshots/match-day-third-800.webp 800w, assets/screenshots/match-day-third-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 58vw" alt="Third-person view of a Runner in Baryo Sawi, with other players lined up ahead." width="1600" height="900" loading="lazy" decoding="async">
+            <figcaption>In-game · Baryo Sawi</figcaption>
+          </figure>
+          <div class="chapter__body">
+            <span class="chapter__num reveal" aria-hidden="true" data-drift="-70">I</span>
+            <h3 class="chapter__title reveal" style="--d:1" data-split>The Chase</h3>
+            <p class="chapter__text reveal" style="--d:2">Run, evade and outmanoeuvre the others across the village. Rooftops, balconies and stairs are routes too: break the Taya's line of sight and slip away.</p>
+            <ul class="chapter__points reveal" style="--d:3">
+              <li>Sprint, slide, jump and crouch</li>
+              <li>Footsteps carry: hear who is coming</li>
+              <li>First or third person, your choice in practice</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="chapter chapter--flip chapter--taya">
+          <figure class="chapter__media reveal-img" data-drift="36" data-gallery-link="match-taya-third">
+            <img src="assets/screenshots/match-taya-third-1600.webp" srcset="assets/screenshots/match-taya-third-800.webp 800w, assets/screenshots/match-taya-third-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 58vw" alt="The local player as the Taya, a blue ghost, in Baryo Sawi at dusk." width="1600" height="900" loading="lazy" decoding="async">
+            <figcaption>In-game · the Taya</figcaption>
+          </figure>
+          <div class="chapter__body">
+            <span class="chapter__num reveal" aria-hidden="true" data-drift="-70">II</span>
+            <h3 class="chapter__title reveal" style="--d:1" data-split>Become the Taya</h3>
+            <p class="chapter__text reveal" style="--d:2">The curse has chosen you. The Taya turns into a blue ghost, runs a little faster, and its clock is running. Every second you hold the curse is a second you lose.</p>
+            <ul class="chapter__points reveal" style="--d:3">
+              <li>Only the Taya's clock runs</li>
+              <li>The Taya is 5% faster</li>
+              <li>Every Taya has the Fifth Toll: nearby Runners slow down</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <figure class="chapter__media reveal-img" data-drift="36" data-gallery-link="match-dusk-runner">
+            <img src="assets/screenshots/match-dusk-runner-1600.webp" srcset="assets/screenshots/match-dusk-runner-800.webp 800w, assets/screenshots/match-dusk-runner-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 58vw" alt="First-person view with the game's HUD: players lined up close in Baryo Sawi at dusk." width="1600" height="900" loading="lazy" decoding="async">
+            <figcaption>In-game · first person</figcaption>
+          </figure>
+          <div class="chapter__body">
+            <span class="chapter__num reveal" aria-hidden="true" data-drift="-70">III</span>
+            <h3 class="chapter__title reveal" style="--d:1" data-split>Pass the Curse</h3>
+            <p class="chapter__text reveal" style="--d:2">Get within reach, face them and tag. Your clock stops the moment it lands, and theirs begins.</p>
+            <ul class="chapter__points reveal" style="--d:3">
+              <li>Tag from 2 m, with a clear line: walls block a tag</li>
+              <li>No tag-backs: they have to chase someone else</li>
+              <li>Two powerup slots and one character ability</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="chapter chapter--flip chapter--taya">
+          <figure class="chapter__media reveal-img" data-drift="36" data-gallery-link="dusk-church">
+            <img src="assets/environments/district-church-dusk-1200.webp" srcset="assets/environments/district-church-dusk-600.webp 600w, assets/environments/district-church-dusk-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 58vw" alt="The church of Baryo Sawi on its terrace at the curse's dusk, under a black sun." width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>In-game · the curse's dusk</figcaption>
+          </figure>
+          <div class="chapter__body">
+            <span class="chapter__num reveal" aria-hidden="true" data-drift="-70">IV</span>
+            <h3 class="chapter__title reveal" style="--d:1" data-split>Survive the Fifth Bell</h3>
+            <p class="chapter__text reveal" style="--d:2">A bell tolls as a Taya's clock runs down, and each one makes that Taya stronger. In the last minute of the lowest clock, the bright day sinks to dusk and fog rolls in.</p>
+            <p class="chapter__text reveal" style="--d:3">At 0:00 the broken bell rings, and that player is drawn down into the fog.</p>
+            <div class="tolls reveal" style="--d:4" aria-label="The bells toll at 60, 30, 15 and 5 seconds; the fifth rings at zero.">
+              <span style="--t:0">0:60</span><span style="--t:1">0:30</span><span style="--t:2">0:15</span><span style="--t:3">0:05</span><span style="--t:4">0:00</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true" data-marquee="1">
+      <div class="marquee__track"><span>Takbo</span><span class="dot">✦</span><span class="solid">Habulan</span><span class="dot">✦</span><span>Takbo</span><span class="dot">✦</span><span class="solid">Taya</span><span class="dot">✦</span><span>Takbo</span><span class="dot">✦</span><span class="solid">Habulan</span><span class="dot">✦</span><span>Takbo</span><span class="dot">✦</span><span class="solid">Taya</span><span class="dot">✦</span></div>
+    </div>
+
+    <!-- 4. Features -->
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="features__head">
+          <div>
+            <p class="eyebrow reveal">Features</p>
+            <h2 class="section-title reveal" id="features-title" style="--d:1" data-split>Everything in the game today.</h2>
+          </div>
+          <p class="lede reveal" style="--d:2">Only what you can play now is listed here. Modes still in development are marked as coming soon.</p>
+        </div>
+
+        <div class="bento">
+          <article class="feature feature--hero reveal">
+            <div class="feature__bg"><img src="assets/screenshots/match-day-runner-1600.webp" srcset="assets/screenshots/match-day-runner-800.webp 800w, assets/screenshots/match-day-runner-1600.webp 1600w" sizes="(max-width: 1100px) 100vw, 66vw" alt="" width="1600" height="900" loading="lazy" decoding="async"></div>
+            <span class="tag">Multiplayer</span>
+            <h3>Tag for 3 to 8 players</h3>
+            <p>Quick Play joins an open game, or hosts one when none is free. Host Private makes a game your friends join with its code. On the same network, host or join over LAN.</p>
+          </article>
+          <article class="feature reveal" style="--d:1">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="12" y="14" width="24" height="22" rx="3"/><path d="M18 22h.01M30 22h.01M19 30h10M24 8v6M10 22H6M42 22h-4"/></svg>
+            <h3>Practice vs bots</h3>
+            <p>Offline: you and five bots, any time.</p>
+          </article>
+          <article class="feature reveal" style="--d:2">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 20h36M10 20v18M38 20v18M6 38h36M24 6 6 20h36z"/><path d="M19 38V28h10v10"/></svg>
+            <h3>Baryo Sawi</h3>
+            <p>A walled seaside village in the middle of its fiesta.</p>
+          </article>
+          <article class="feature reveal" style="--d:1">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="24" cy="15" r="7"/><path d="M10 42c1-9 7-14 14-14s13 5 14 14"/><path d="M36 8l4-4M38 14h5"/></svg>
+            <h3>12 characters</h3>
+            <p>Each with one ability. Or build your own look and choose any of their abilities.</p>
+          </article>
+          <article class="feature reveal" style="--d:2">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 4l5 13h14l-11 8 4 14-12-8-12 8 4-14L5 17h14z"/></svg>
+            <h3>Progression</h3>
+            <p>Coins, rank points and 11 titles. A loadout with a starting powerup and small, capped bonuses.</p>
+          </article>
+          <article class="feature reveal" style="--d:3">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 6l-8 6 4 8 4-2v24h16V18l4 2 4-8-8-6c-1 4-4 6-8 6s-7-2-8-6z"/></svg>
+            <h3>Cosmetics</h3>
+            <p>Outfits, hats, gloves, trails, tag effects and nameplates, bought with coins you earn.</p>
+          </article>
+          <article class="feature reveal" style="--d:1">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 42V26h10v16M19 42V14h10v28M32 42V20h10v22M4 42h40"/></svg>
+            <h3>Rankings</h3>
+            <p>Daily, weekly and personal boards. Most time left ranks highest.</p>
+          </article>
+          <article class="feature reveal" style="--d:2">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 8h13c2 0 3 1 3 3v31c0-2-1-3-3-3H8zM40 8H27c-2 0-3 1-3 3v31c0-2 1-3 3-3h13z"/></svg>
+            <h3>The Lore Journal</h3>
+            <p>Eight pages of the curse. Play matches, make tags and find hidden fragments to open them.</p>
+          </article>
+          <article class="feature reveal" style="--d:3">
+            <svg class="feature__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="18" y="5" width="12" height="22" rx="6"/><path d="M11 22c0 7 6 13 13 13s13-6 13-13M24 35v8M17 43h14"/></svg>
+            <h3>Voice and text chat</h3>
+            <p>Talk to the lobby and the match, or send a quick message.</p>
+          </article>
+        </div>
+
+        <!-- The roster -->
+        <div class="roster">
+          <div class="roster__head">
+            <div>
+              <p class="eyebrow reveal">Characters</p>
+              <h3 class="reveal" style="--d:1" data-split>Twelve runners. One curse.</h3>
+              <p class="reveal" style="--d:2">Every character moves the same; what sets them apart is one ability. Each ready-made character can be worn by one player per match.</p>
+            </div>
+            <div class="rail-controls" data-rail-controls="roster">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous characters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next characters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+          <ul class="rail" data-rail="roster" aria-label="Characters" tabindex="0">
+            <li class="reveal" style="--d:0"><article class="card"><div class="card__portrait"><img src="assets/characters/kenz-kenz.webp" alt="Portrait of Kenz Kenz" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Agility</span><h4>Kenz Kenz</h4><span class="card__title">The Parkour Ace</span><p class="card__ability"><b>Liksi</b>A quick 4 m sidestep in whichever way you're moving. No stamina.</p></div></article></li>
+            <li class="reveal" style="--d:1"><article class="card"><div class="card__portrait"><img src="assets/characters/the-melvz.webp" alt="Portrait of The Melvz" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Deception</span><h4>The Melvz</h4><span class="card__title">The Festival Trickster</span><p class="card__ability"><b>Ilusyon</b>A copy of you sprints straight ahead for 3 s while you slip away.</p></div></article></li>
+            <li class="reveal" style="--d:2"><article class="card"><div class="card__portrait"><img src="assets/characters/jie.webp" alt="Portrait of Jie" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Tactical</span><h4>Jie</h4><span class="card__title">The Route Breaker</span><p class="card__ability"><b>Baliktad</b>Snap back to where you stood 3 s ago (12 m at most).</p></div></article></li>
+            <li class="reveal" style="--d:3"><article class="card"><div class="card__portrait"><img src="assets/characters/vdg.webp" alt="Portrait of VDG" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Disruption</span><h4>VDG</h4><span class="card__title">Very Dangerous Guy</span><p class="card__ability"><b>Chaos</b>Each time, another character's ability, picked at random. You see the next one while you wait.</p></div></article></li>
+            <li class="reveal" style="--d:0"><article class="card"><div class="card__portrait"><img src="assets/characters/doc-ry.webp" alt="Portrait of Doc Ry" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Support</span><h4>Doc Ry</h4><span class="card__title">The Team Medic</span><p class="card__ability"><b>First Aid</b>+40 stamina for you and every Runner within 6 m.</p></div></article></li>
+            <li class="reveal" style="--d:1"><article class="card"><div class="card__portrait"><img src="assets/characters/fr-xenoj.webp" alt="Portrait of Fr. Xenoj" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Control</span><h4>Fr. Xenoj</h4><span class="card__title">The Alley Warden</span><p class="card__ability"><b>Basbas</b>Bless the ground: the Taya is 20% slower in a 3 m circle for 4 s.</p></div></article></li>
+            <li class="reveal" style="--d:2"><article class="card"><div class="card__portrait"><img src="assets/characters/nining-joan.webp" alt="Portrait of Nining Joan" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Protection</span><h4>Nining Joan</h4><span class="card__title">The Anito Keeper</span><p class="card__ability"><b>Agimat</b>For 2 s, you and every Runner within 5 m each block the next tag.</p></div></article></li>
+            <li class="reveal" style="--d:3"><article class="card"><div class="card__portrait"><img src="assets/characters/caloy.webp" alt="Portrait of Caloy" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Mobility</span><h4>Caloy</h4><span class="card__title">The Street Runner</span><p class="card__ability"><b>Hataw</b>Three quick zigzag hops that cost no stamina, then free sprinting for 6 s. Hit a wall mid-zigzag and you're stunned for 1.5 s.</p></div></article></li>
+            <li class="reveal" style="--d:0"><article class="card"><div class="card__portrait"><img src="assets/characters/jorress.webp" alt="Portrait of Jorress" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Recon</span><h4>Jorress</h4><span class="card__title">The Island Scout</span><p class="card__ability"><b>Tanaw</b>For 8 s every Runner sees the Taya through walls, and you see every Runner too, each with their name.</p></div></article></li>
+            <li class="reveal" style="--d:1"><article class="card"><div class="card__portrait"><img src="assets/characters/jun-jun.webp" alt="Portrait of Jun Jun" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Stealth</span><h4>Jun Jun</h4><span class="card__title">The Alley Phantom</span><p class="card__ability"><b>Lusot</b>Vanish for 4 s. Your footsteps still sound, and you can still be tagged.</p></div></article></li>
+            <li class="reveal" style="--d:2"><article class="card"><div class="card__portrait"><img src="assets/characters/madam-donna.webp" alt="Portrait of Madam Donna" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Utility</span><h4>Madam Donna</h4><span class="card__title">The Strategy Queen</span><p class="card__ability"><b>Manipula</b>The Taya within 10 m loses its active powerups, and its ability starts its cooldown again.</p></div></article></li>
+            <li class="reveal" style="--d:3"><article class="card"><div class="card__portrait"><img src="assets/characters/jetto.webp" alt="Portrait of Jetto" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Mobility</span><h4>Jetto</h4><span class="card__title">The Velocity Rebel</span><p class="card__ability"><b>Arangkada</b>+30% speed for 3 s.</p></div></article></li>
+            <li class="reveal" style="--d:0"><article class="card card--taya"><div class="card__portrait"><img src="assets/characters/ghost-of-the-fifth-bell.webp" alt="Portrait of the Ghost of the 5th Bell, the Taya" width="400" height="500" loading="lazy" decoding="async"></div><div class="card__body"><span class="card__role">Every Taya</span><h4>Ghost of the 5th Bell</h4><span class="card__title">The Forgotten Toll</span><p class="card__ability"><b>Fifth Toll</b>Runners within 12 m are 15% slower for 1.5 s. Everyone hears where you are.</p></div></article></li>
+          </ul>
+        </div>
+
+        <!-- Powerups and modes -->
+        <div class="split">
+          <div>
+            <p class="eyebrow reveal">Powerups</p>
+            <h3 class="reveal" style="--d:1">Grab them around the map. Carry two.</h3>
+            <p class="reveal" style="--d:2">Anyone can pick up anything, but some only work for a Runner or for the Taya.</p>
+            <ul class="powerups reveal" style="--d:3">
+              <li><img src="assets/icons/powerups/speed-burst.png" alt="" width="40" height="40" loading="lazy"><div><b>Speed Burst</b><span>+30% speed for 4 s.</span></div></li>
+              <li><img src="assets/icons/powerups/stamina-burst.png" alt="" width="40" height="40" loading="lazy"><div><b>Stamina Burst</b><span>Full stamina, no sprint drain for 6 s.</span></div></li>
+              <li><img src="assets/icons/powerups/dash.png" alt="" width="40" height="40" loading="lazy"><div><b>Dash</b><span>A quick burst forward, about 6 m.</span></div></li>
+              <li><img src="assets/icons/powerups/tracker.png" alt="" width="40" height="40" loading="lazy"><div><b>Tracker</b><span>8 s: points at the Taya, or the nearest Runner.</span></div></li>
+              <li><img src="assets/icons/powerups/tag-boost.png" alt="" width="40" height="40" loading="lazy"><div><b>Tag Boost</b><span>Taya only. More tag range for 6 s.</span></div></li>
+              <li><img src="assets/icons/powerups/shield.png" alt="" width="40" height="40" loading="lazy"><div><b>Shield</b><span>Runner only. Blocks one tag.</span></div></li>
+              <li><img src="assets/icons/powerups/decoy.png" alt="" width="40" height="40" loading="lazy"><div><b>Decoy</b><span>Runner only. A fake you sprints off for 5 s.</span></div></li>
+              <li><img src="assets/icons/powerups/hunter-pulse.png" alt="" width="40" height="40" loading="lazy"><div><b>Hunter Pulse</b><span>Taya only. Reveals Runners within 25 m.</span></div></li>
+              <li><img src="assets/icons/powerups/smoke-bomb.png" alt="" width="40" height="40" loading="lazy"><div><b>Smoke Bomb</b><span>Runner only. Nobody can see or tag through it.</span></div></li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow reveal">Modes</p>
+            <h3 class="reveal" style="--d:1">One mode now. More are coming.</h3>
+            <ul class="modes reveal" style="--d:2">
+              <li class="is-live"><div><b>Classic Habulan</b><span>Your clock runs only while you're the Taya. Most time left wins.</span></div><span class="tag">Play now</span></li>
+              <li><div><b>Langit Lupa</b><span>Safe only while you're up high.</span></div><span class="tag tag--soon">Coming soon</span></li>
+              <li><div><b>Sun Moon Earth Hell</b><span>Zones, teams and eliminations.</span></div><span class="tag tag--soon">Coming soon</span></li>
+              <li><div><b>Base to Base</b><span>Capture the other base and get home.</span></div><span class="tag tag--soon">Coming soon</span></li>
+              <li><div><b>Patubig</b><span>Cross the lanes past the guards.</span></div><span class="tag tag--soon">Coming soon</span></li>
+              <li><div><b>Habulan Royale</b><span>A shrinking safe zone. Last one left wins.</span></div><span class="tag tag--soon">Coming soon</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. The world -->
+    <section class="section world" id="world" aria-labelledby="world-title">
+      <div class="container">
+        <div class="world__intro">
+          <div>
+            <p class="eyebrow reveal">The world of HABULAN</p>
+            <h2 class="world__name reveal" id="world-title" style="--d:1" data-split>Baryo Sawi<small>A walled seaside village</small></h2>
+          </div>
+          <p class="lede reveal" style="--d:2">A village in the middle of its fiesta: the plaza and its fountain, the market, sari-sari lane, the basketball court, the church on its terrace, the bahay na bato and the pantalan. Then the curse comes, and the day falls.</p>
+        </div>
+      </div>
+
+      <div class="compare reveal" data-compare>
+        <img src="assets/environments/baryo-day-1920.webp" srcset="assets/environments/baryo-day-960.webp 960w, assets/environments/baryo-day-1920.webp 1920w" sizes="100vw" alt="Baryo Sawi's plaza in the bright day." width="1920" height="1080" loading="lazy" decoding="async">
+        <img class="compare__dusk" src="assets/environments/baryo-dusk-1920.webp" srcset="assets/environments/baryo-dusk-960.webp 960w, assets/environments/baryo-dusk-1920.webp 1920w" sizes="100vw" alt="The same plaza at the curse's dusk." width="1920" height="1080" loading="lazy" decoding="async">
+        <label class="visually-hidden" for="compare-range">Slide between the day and the curse's dusk</label>
+        <input id="compare-range" type="range" min="0" max="100" value="50" step="1" data-compare-range>
+        <span class="compare__handle" aria-hidden="true"></span>
+        <span class="compare__label compare__label--day" aria-hidden="true">Day</span>
+        <span class="compare__label compare__label--dusk" aria-hidden="true">The curse's dusk</span>
+      </div>
+      <div class="container">
+        <p class="compare__note reveal">Drag across the picture. In the last minute of the lowest clock, the bright day sinks to dusk and fog rolls in, for everyone.</p>
+
+        <div class="districts">
+          <div class="roster__head">
+            <h3 class="reveal">Around the village</h3>
+            <div class="rail-controls" data-rail-controls="districts">
+              <button class="rail-btn" type="button" data-rail-prev aria-label="Previous places"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="rail-btn" type="button" data-rail-next aria-label="Next places"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+          <ul class="rail" data-rail="districts" aria-label="Places in Baryo Sawi" tabindex="0">
+            <li class="reveal" style="--d:0"><figure class="district"><div class="district__img"><img src="assets/environments/district-arch-dusk-1200.webp" alt="The festival arch at dusk" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Festival Arch</h4><p>The way into the plaza, strung with fiesta banners.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:1"><figure class="district"><div class="district__img"><img src="assets/environments/district-market-day-1200.webp" alt="Market stalls seen from the arcade roof" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>From the Arcade</h4><p>The market stalls from above. Rooftops and balconies are routes too.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:2"><figure class="district"><div class="district__img"><img src="assets/environments/district-market-dusk-1200.webp" alt="The market stalls at dusk" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Market</h4><p>Rows of stalls and awnings to weave between.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:0"><figure class="district"><div class="district__img"><img src="assets/environments/district-church-day-1200.webp" alt="The church on its terrace in the day" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Church</h4><p>High on its terrace, up a wide flight of stairs.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:1"><figure class="district"><div class="district__img"><img src="assets/environments/district-court-day-1200.webp" alt="The basketball court" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Court</h4><p>The basketball court, open ground with nowhere to hide.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:2"><figure class="district"><div class="district__img"><img src="assets/environments/district-sari-day-1200.webp" alt="A sari-sari store on its lane" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>Sari-sari Lane</h4><p>Little stores along a narrow street.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:0"><figure class="district"><div class="district__img"><img src="assets/environments/district-gate-dusk-1200.webp" alt="The village gate at dusk" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Gate</h4><p>An iron gate in the stone wall that rings the village.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:1"><figure class="district"><div class="district__img"><img src="assets/environments/district-bahay-dusk-1200.webp" alt="The bahay na bato at dusk" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>Bahay na Bato</h4><p>Stone-and-wood houses with balconies to climb.</p></figcaption></figure></li>
+            <li class="reveal" style="--d:2"><figure class="district"><div class="district__img"><img src="assets/environments/district-pantalan-dusk-1200.webp" alt="The pantalan, the village pier, at dusk" width="1200" height="675" loading="lazy" decoding="async"></div><figcaption><h4>The Pantalan</h4><p>The pier, where the village meets the sea.</p></figcaption></figure></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Lore -->
+    <section class="section lore" id="lore" aria-labelledby="lore-title">
+      <div class="lore__bg" data-parallax="0.15" aria-hidden="true"><img src="assets/environments/district-church-dusk-1200.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></div>
+      <div class="container">
+        <div class="lore__head">
+          <svg class="lore__bell reveal" data-bell viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M32 4v6M20 14h24M32 10c-10 0-15 8-15 18v12l-6 8h42l-6-8V28c0-10-5-18-15-18z"/><circle cx="32" cy="54" r="4"/><path d="M8 18c3-4 6-6 9-7M56 18c-3-4-6-6-9-7" opacity=".5"/></svg>
+          <p class="eyebrow eyebrow--crimson reveal">The lore</p>
+          <h2 class="lore__title reveal" id="lore-title" style="--d:1" data-split>Some bells<span>should never ring.</span></h2>
+          <p class="reveal" style="--d:2">Long ago, a village by the sea found a bell that belonged to no church.</p>
+        </div>
+
+        <ol class="chronicle">
+          <li class="reveal">
+            <span class="chronicle__num">I</span>
+            <h3>The Forgotten Village <span class="tl" lang="fil">Ang Nakalimutang Pamayanan</span></h3>
+            <p>San Isidro del Silencio stood where the road met the sea. Beneath its old stone belfry, one dry season, the people found a bell that belonged to no church. No map remembers the town now.</p>
+          </li>
+          <li class="reveal">
+            <span class="chronicle__num">II</span>
+            <h3>The Ancient Bell <span class="tl" lang="fil">Ang Pinagmulan ng Sumpa</span></h3>
+            <p>The villagers rang it to undo their mistakes: a boat that should not have sunk, a fever that should have broken. Each answered prayer borrowed time from another life, and the debt grew heavier than the bell.</p>
+          </li>
+          <li class="reveal">
+            <span class="chronicle__num">III</span>
+            <h3>The Keeper of Time <span class="tl" lang="fil">Ang Tagabantay ng Oras</span></h3>
+            <p>When the bell asked for a guardian, a traveller no one could name stepped forward and became the first Taya. Year by year his memories wore away behind a mask, until one word was left to him: <em lang="fil">Takbo.</em></p>
+          </li>
+          <li class="reveal">
+            <span class="chronicle__num">IV</span>
+            <h3>The Five Tollings <span class="tl" lang="fil">Ang Limang Tunog</span></h3>
+            <p>The first toll put out every candle. The second called the fog up from the sea. The third stopped the clocks. The fourth set the shadows walking. At the fifth, San Isidro del Silencio was gone.</p>
+          </li>
+          <li class="reveal">
+            <span class="chronicle__num">V</span>
+            <h3>The Curse That Remains <span class="tl" lang="fil">Ang mga Nawalang Bantay</span></h3>
+            <p>The Keeper was not the last. Each time the mark passes from hand to hand, another runner carries the curse for a while. Some pass it on. Some hear the fifth bell first, and walk into the fog without looking back.</p>
+            <p class="chronicle__end" lang="fil">Ikaw naman ang taya.</p>
+          </li>
+        </ol>
+        <p class="fiction-note reveal"><b>A work of fiction.</b> San Isidro del Silencio, its bell and its Keeper are invented. They are inspired by Filipino island life, but they are not Marinduque history or a Moriones tradition.</p>
+      </div>
+    </section>
+
+    <!-- 7. Media -->
+    <section class="section media" id="media" aria-labelledby="media-title">
+      <div class="container">
+        <div class="media__head">
+          <div>
+            <p class="eyebrow reveal">Media</p>
+            <h2 class="section-title reveal" id="media-title" style="--d:1" data-split>From the game.</h2>
+          </div>
+          <div class="filters reveal" role="group" aria-label="Filter the gallery" data-filters>
+            <button type="button" aria-pressed="true" data-filter="all">All</button>
+            <button type="button" aria-pressed="false" data-filter="gameplay">Gameplay</button>
+            <button type="button" aria-pressed="false" data-filter="characters">Characters</button>
+            <button type="button" aria-pressed="false" data-filter="world">World</button>
+          </div>
+        </div>
+        <ul class="gallery" data-gallery>
+          <li style="--d:0" data-cat="gameplay characters" class="is-wide"><a href="assets/screenshots/match-day-third-2560.webp" data-caption="A Runner in third person, before the festival arch"><img src="assets/screenshots/match-day-third-800.webp" srcset="assets/screenshots/match-day-third-800.webp 800w, assets/screenshots/match-day-third-1600.webp 1600w" sizes="(max-width: 600px) 100vw, 66vw" alt="Third-person view of Kenz Kenz in Baryo Sawi, the other players lined up before the festival arch." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:1" data-cat="gameplay characters"><a href="assets/screenshots/match-day-runner-2560.webp" data-caption="First person, with the HUD"><img src="assets/screenshots/match-day-runner-800.webp" srcset="assets/screenshots/match-day-runner-800.webp 800w, assets/screenshots/match-day-runner-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="First-person view with the game HUD: the Runners and the blue Taya ghost before the arch." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:2" data-cat="gameplay characters"><a href="assets/screenshots/match-taya-third-2560.webp" data-caption="The Taya at the curse’s dusk"><img src="assets/screenshots/match-taya-third-800.webp" srcset="assets/screenshots/match-taya-third-800.webp 800w, assets/screenshots/match-taya-third-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The player as the Taya, a blue ghost with a bell, in third person at dusk." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:0" data-cat="world" class="is-wide"><a href="assets/environments/district-church-dusk-1920.webp" data-caption="The church under the black sun"><img src="assets/environments/district-church-dusk-600.webp" srcset="assets/environments/district-church-dusk-600.webp 600w, assets/environments/district-church-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, 66vw" alt="The church of Baryo Sawi on its terrace at the curse’s dusk, under a black sun." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:1" data-cat="gameplay"><a href="assets/screenshots/match-dusk-runner-2560.webp" data-caption="The day falls"><img src="assets/screenshots/match-dusk-runner-800.webp" srcset="assets/screenshots/match-dusk-runner-800.webp 800w, assets/screenshots/match-dusk-runner-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="First-person view at the curse’s dusk, the players lined up before the arch." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:2" data-cat="gameplay"><a href="assets/screenshots/match-you-are-taya-2560.webp" data-caption="You are the Taya"><img src="assets/screenshots/match-you-are-taya-800.webp" srcset="assets/screenshots/match-you-are-taya-800.webp 800w, assets/screenshots/match-you-are-taya-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="First-person view as the Taya: the ghost’s blue hands, the Fifth Toll ready." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:0" data-cat="world"><a href="assets/environments/district-arch-dusk-1920.webp" data-caption="The festival arch"><img src="assets/environments/district-arch-dusk-600.webp" srcset="assets/environments/district-arch-dusk-600.webp 600w, assets/environments/district-arch-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The festival arch of Baryo Sawi at dusk, under a black sun." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:1" data-cat="world"><a href="assets/environments/district-market-day-1920.webp" data-caption="The market from the arcade roof"><img src="assets/environments/district-market-day-600.webp" srcset="assets/environments/district-market-day-600.webp 600w, assets/environments/district-market-day-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Market stalls seen from the top of the arcade in the bright day." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:2" data-cat="gameplay characters"><a href="assets/screenshots/match-dusk-third-2560.webp" data-caption="Third person at dusk"><img src="assets/screenshots/match-dusk-third-800.webp" srcset="assets/screenshots/match-dusk-third-800.webp 800w, assets/screenshots/match-dusk-third-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Third-person view at dusk with the Runners lined up ahead." width="800" height="450" loading="lazy" decoding="async"></a></li>
+          <li style="--d:0" data-cat="world"><a href="assets/environments/district-sari-dusk-1920.webp" data-caption="The sari-sari store"><img src="assets/environments/district-sari-dusk-600.webp" srcset="assets/environments/district-sari-dusk-600.webp 600w, assets/environments/district-sari-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="A sari-sari store and its lamp post at dusk." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:1" data-cat="world"><a href="assets/environments/district-court-day-1920.webp" data-caption="The basketball court"><img src="assets/environments/district-court-day-600.webp" srcset="assets/environments/district-court-day-600.webp 600w, assets/environments/district-court-day-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The basketball court in the bright day." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:2" data-cat="world"><a href="assets/environments/district-church-day-1920.webp" data-caption="The church in the day"><img src="assets/environments/district-church-day-600.webp" srcset="assets/environments/district-church-day-600.webp 600w, assets/environments/district-church-day-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The church on its terrace in the bright day." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:0" data-cat="world"><a href="assets/environments/district-gate-dusk-1920.webp" data-caption="The village gate"><img src="assets/environments/district-gate-dusk-600.webp" srcset="assets/environments/district-gate-dusk-600.webp 600w, assets/environments/district-gate-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The iron gate in the wall around the village, at dusk." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:1" data-cat="world"><a href="assets/environments/district-bahay-dusk-1920.webp" data-caption="Bahay na bato"><img src="assets/environments/district-bahay-dusk-600.webp" srcset="assets/environments/district-bahay-dusk-600.webp 600w, assets/environments/district-bahay-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="A bahay na bato with its balcony and bougainvillea, at dusk." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:2" data-cat="world"><a href="assets/environments/district-pantalan-dusk-1920.webp" data-caption="The pantalan"><img src="assets/environments/district-pantalan-dusk-600.webp" srcset="assets/environments/district-pantalan-dusk-600.webp 600w, assets/environments/district-pantalan-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The wall and pier where the village meets the sea, at dusk." width="600" height="338" loading="lazy" decoding="async"></a></li>
+          <li style="--d:0" data-cat="world"><a href="assets/environments/district-market-dusk-1920.webp" data-caption="The market at dusk"><img src="assets/environments/district-market-dusk-600.webp" srcset="assets/environments/district-market-dusk-600.webp 600w, assets/environments/district-market-dusk-1200.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="The market stalls at dusk." width="600" height="338" loading="lazy" decoding="async"></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true" data-marquee="-1">
+      <div class="marquee__track"><span>Ikaw naman ang taya</span><span class="dot">✦</span><span class="solid">Ang ikalimang kampana</span><span class="dot">✦</span><span>Ikaw naman ang taya</span><span class="dot">✦</span><span class="solid">Ang ikalimang kampana</span><span class="dot">✦</span></div>
+    </div>
+
+    <!-- 8. Trailer -->
+    <section class="section trailer" id="trailer" aria-labelledby="trailer-title">
+      <div class="container">
+        <div class="trailer__head">
+          <p class="eyebrow eyebrow--crimson reveal">Trailer</p>
+          <h2 class="trailer__title reveal" id="trailer-title" style="--d:1" data-split>Hear the Fifth Bell.<span>Witness the curse.</span></h2>
+        </div>
+        <button class="screen reveal-img" type="button" data-video="trailer" data-grow aria-describedby="trailer-status">
+          <img src="assets/videos/trailer-poster-1920.webp" srcset="assets/videos/trailer-poster-960.webp 960w, assets/videos/trailer-poster-1920.webp 1920w" sizes="(max-width: 1240px) 100vw, 1240px" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+          <span class="screen__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span>
+          <span class="screen__meta">
+            <span>Official trailer · 1:00</span>
+            <span class="tag" id="trailer-status" data-video-status="trailer">Coming soon</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 9. Download -->
+    <section class="section play" id="play" aria-labelledby="play-title">
+      <div class="play__bg" aria-hidden="true"><img src="assets/environments/district-pantalan-dusk-1200.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></div>
+      <div class="container play__grid">
+        <div>
+          <p class="eyebrow eyebrow--crimson reveal">Play</p>
+          <h2 class="play__title reveal" id="play-title" style="--d:1" data-split>The curse is waiting.<span>Will you run?</span></h2>
+          <p class="play__copy reveal" style="--d:2">The latest build is out now for Windows PC. Watch the trailer, gather your friends, and pass the curse before the Fifth Bell rings.</p>
+          <div class="play__actions reveal" style="--d:3">
+            <a class="btn btn--gold" href="#play" aria-disabled="true" data-download>Download coming soon</a>
+            <button class="btn" type="button" data-video="gameplay">
+              <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span>
+              Gameplay video
+            </button>
+            <button class="btn" type="button" data-video="trailer">
+              <span class="play-ring" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z" fill="currentColor"/></svg></span>
+              Official trailer
+            </button>
+          </div>
+          <p class="play__status reveal" style="--d:4" data-platforms><b>Platforms:</b> Windows PC.</p>
+        </div>
+        <aside class="qr-card reveal" style="--d:2" aria-label="QR code to the download page">
+          <div class="qr-card__code is-empty" data-qr><span>QR code coming soon</span></div>
+          <p data-qr-caption>The QR code appears here once the download page is live.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logo/habulan-wordmark-sm.webp" alt="HABULAN" width="400" height="203" loading="lazy">
+          <p class="sub">The Curse of the Fifth Bell</p>
+          <p>A multiplayer 3D tag game inspired by the Filipino childhood game of habulan. Every second you keep is a second the curse cannot take.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="#about">The Game</a></li>
+            <li><a href="#gameplay">Gameplay</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#world">The World</a></li>
+            <li><a href="#lore">The Lore</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#trailer">Trailer</a></li>
+            <li><a href="#play">Play</a></li>
+          </ul>
+        </nav>
+        <div>
+          <div data-socials hidden>
+            <h2>Follow</h2>
+            <ul data-socials-list></ul>
+          </div>
+          <div data-team hidden>
+            <h2>The team</h2>
+            <ul class="footer__credits" data-team-list></ul>
+          </div>
+          <h2>Credits</h2>
+          <ul class="footer__credits">
+            <li>Characters and Baryo Sawi models made with Meshy (meshy.ai) and adapted for HABULAN, CC BY 4.0.</li>
+            <li>Base characters, animation and village props: Quaternius (CC0). Kits: Kenney (CC0).</li>
+            <li>Type: Cinzel, Barlow (SIL Open Font License).</li>
+            <li>Made with Unity and Blender.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span data-year>2026</span> <span data-holder>HABULAN</span>. All rights reserved.</p>
+        <p>A work of fiction, inspired by Filipino island life.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" data-lightbox aria-label="Image viewer">
+    <button class="dialog-close" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-prev aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <figure>
+      <img src="data:," alt="" data-lightbox-img>
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-next aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </dialog>
+
+  <dialog class="video-modal" data-video-modal aria-label="Video">
+    <button class="dialog-close" type="button" data-close aria-label="Close the video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="video-modal__frame" data-video-frame></div>
+  </dialog>
+
+  <noscript><style>.reveal,.reveal-img,.reveal-img img{opacity:1!important;transform:none!important;clip-path:none!important}</style></noscript>
+</body>
+</html>
